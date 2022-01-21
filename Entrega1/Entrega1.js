@@ -25,7 +25,7 @@ class Usuario {
 
     getBookNames(){
         const nombres = this.libros.map(libro =>{
-            libro.nombre;
+            return libro.nombre;
         })
         return nombres;
     }
@@ -35,4 +35,6 @@ class Usuario {
 let usuario1 = new Usuario ("Carlos", "Rojas", [{autor:"Meryl",nombre:"Frankestein"},{autor: "xxxx" , nombre:"sasdas"}], ["gato","perro","canario"]);
 usuario1.addBook("ksjakdjs","asdasdas")
 
-console.log(usuario1);
+
+
+console.log(usuario1.getBookNames());
