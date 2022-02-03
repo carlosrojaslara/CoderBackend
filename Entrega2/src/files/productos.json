@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Escuadra",
+    "price": 23,
+    "thumbnail": "sdasa",
+    "id": 1
+  },
+  {
+    "title": "Lapiz",
+    "price": 24,
+    "thumbnail": "sada",
+    "id": 2
+  },
+  {
+    "title": "lapicera",
+    "price": 34,
+    "thumbnail": "asdas",
+    "id": 3
+  }
+]
