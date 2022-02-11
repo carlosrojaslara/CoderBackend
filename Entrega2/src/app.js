@@ -1,17 +1,19 @@
 const express = require('express');
-const Contenedor = require('./Contenedor.js')
-const userService = new Contenedor('./src/files/productos.json');
-
+const userRouter = require('./routes/Contenedor')
 
 const app = express();
+
+app.use(express.urlencoded({extended:true}))
+app.use(express.json());
+app.use('/Contenedor',userRouter);
+
+app.use(express.static(__dirname+'public'))
 
 const connectedServer = app.listen(8080,()=>{
     console.log("Listening on port 8080")  ;  
 })
 
-app.get('/',(request, response)=>{
-    response.send("hola")
-})
+
 
 app.get('/productos',(req,res)=>{
     userService.getAll().then(result=>res.send(result.payload))
@@ -27,12 +29,3 @@ app.get('/productoRandom',(req,res)=>{
 
 
 
-
-
-// const server = http.createServer((request, response)=>{
-//     response.end("hola rey")
-// }) 
-
-// const connectedServer = server.listen(8080,()=>{
- 
-// })

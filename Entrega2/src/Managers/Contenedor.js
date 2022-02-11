@@ -1,6 +1,4 @@
 const fs = require('fs');
-const { userInfo } = require('os');
-
 
 const pathToProducts = './files/productos.json'
 

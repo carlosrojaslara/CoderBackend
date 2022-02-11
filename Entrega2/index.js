@@ -1,6 +1,6 @@
-const Contenedor = require('./Contenedor.js')
+const Contenedor = require('./src/Managers/Contenedor')
 
-const userService = new Contenedor('./src/files/productos.json');
+const userService = new Contenedor(__dirname+'/../files/productos.json');
 
 
 let producto1 = {
@@ -22,8 +22,7 @@ let producto3 = {
     thumbnail: 'asdas'
 }
 
-userService.save(producto3).then(result=>console.log(result))
+// userService.save(producto3).then(result=>console.log(result))
 // userService.getAll().then(result=>console.log(result))
 // userService.getById(1).then(result=>console.log(result))
-// userService.deleteAll().then(result=>console.log(result))
 //userService.deleteById(1).then(result=>console.log(result))
