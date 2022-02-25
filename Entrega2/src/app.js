@@ -1,7 +1,7 @@
 const express = require('express');
 const { Server } = require ('socket.io')
 const userRouter = require('./routes/Contenedor')
-const Contenedor = require ('./Managers/Contenedor')
+const Contenedor = require ('./Managers/Contenedor.js')
 
 const app = express();
 

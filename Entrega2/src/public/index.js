@@ -16,4 +16,12 @@ form.addEventListener = ("submit",(evt)=>{
 // form.addEventListener('submit',(e)=>handleSubmit(e,e.target,"/pets"))
 socket.on('productLog',data=>{
     console.log(data)
+    let productos = data.payload;
+    fetch('templates/newestProducts.handlebars').then(res=>{
+        
+        return res.text()
+    })
+        
+
+
 })
