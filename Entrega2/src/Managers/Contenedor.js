@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const pathToProducts = './files/productos.json'
+const pathToProducts = __dirname+'/../files/productos.json'
 
 class Contenedor {
     constructor (path) {
@@ -28,13 +28,49 @@ class Contenedor {
             return {status:"error",message:error}
         }
     }
+
+    fetch= async () =>{
+
+        let data = await fs.promises.readFile(pathToProducts,'utf-8');
+        let productos = JSON.parse(data);
+        return productos;
+    } 
+
     getAll = async() =>{
-        if(fs.existsSync(this.path)){
-            let data = await fs.promises.readFile(this.path,'utf-8')
-            let productos = JSON.parse(data);
-            return {status:"succes", payload:productos}
+        if(fs.existsSync(pathToProducts)){
+            try{
+                let productos = await this.fetch();
+                return {status:"succes",payload:pets}
+            }
+            catch(error){
+                return {status:"error",error:error}
+
+            }
         }
     }
+
+    add = async (producto) =>{
+        if(fs.existsSync(pathToProducts)){
+            try{
+                let productos = await fetch();
+                if(productos.length===0){
+                    producto.id=1;
+                    await fs.promises.writeFile(pathToProducts,JSON.stringify([pet],null,2))
+                    return {status:"succes",message:"Producto agregado"}
+                }
+                producto.id = productos[productos.length-1].id+1;
+                productos.push(producto);
+                await fs.promises.writeFile(pathToProducts,JSON.stringify(productos),null,2);
+                return {status:"succes",message:"Producto agregado"}
+            }catch(error) {
+                return {status:"error",error:error}
+            }
+        }
+        producto.id=1;
+        await fs.promises.writeFile(pathToProducts,JSON.stringify([pet],null,2))
+         return {status:"succes",message:"Producto agregado"}
+    }
+
     getById =async (id) =>{
         if(fs.existsSync(this.path)){
             let data = await fs.promises.readFile(this.path,'utf-8')
