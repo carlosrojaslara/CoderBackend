@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "productos": [
+      {
+        "nombre": "asda",
+        "precio": 42342,
+        "codigo": "sasasd",
+        "id": 1,
+        "timestamp": 1647558055835
+      },
+      {
+        "nombre": "asda",
+        "precio": 42342,
+        "codigo": "sasasd",
+        "id": 1,
+        "timestamp": 1647558055835
+      }
+    ],
+    "timestamp": 1647557721065
+  }
+]

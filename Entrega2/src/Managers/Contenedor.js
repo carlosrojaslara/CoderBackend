@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const pathToProducts = __dirname+'/../files/productos.json'
+const pathToProducts = __dirname+"/../files/productos.json"
 
 class Contenedor {
     constructor (path) {
